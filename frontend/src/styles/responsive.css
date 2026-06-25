@@ -1,0 +1,444 @@
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 18px;
+    }
+  
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+  
+    .hero {
+      padding: 90px 6%;
+    }
+  
+    .hero h1 {
+      font-size: 2.6rem;
+    }
+  
+    .hero-buttons {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .page {
+      padding: 90px 6%;
+    }
+  
+    .page h1 {
+      font-size: 2.3rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  
+    .contact-info h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .contact-page {
+      padding: 80px 6%;
+    }
+  
+    .contact-info h1 {
+      font-size: 2.4rem;
+    }
+  
+    .contact-form {
+      padding: 26px;
+      border-radius: 22px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  
+    .contact-info h1,
+    .page h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .contact-page,
+    .page {
+      padding: 80px 6%;
+    }
+  
+    .contact-info h1,
+    .page h1 {
+      font-size: 2.4rem;
+    }
+  
+    .contact-form {
+      padding: 26px;
+      border-radius: 22px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-right {
+      flex-direction: column;
+      gap: 16px;
+    }
+  
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .arabic-greeting {
+      top: 35px;
+    }
+  
+    .bismillah {
+      font-size: 1.5rem;
+    }
+  
+    .salam {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .arabic-greeting {
+      top: 28px;
+      padding: 14px 18px;
+    }
+  
+    .bismillah {
+      font-size: 2rem;
+    }
+  
+    .salam {
+      font-size: 1.25rem;
+      text-align: center;
+    }
+  
+    .hero-content {
+      margin-top: 120px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .arabic-greeting .bismillah {
+      font-size: 2.4rem !important;
+    }
+  
+    .arabic-greeting .salam {
+      font-size: 1.35rem !important;
+      text-align: center !important;
+    }
+  
+    .hero-content {
+      margin-top: 170px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .arabic-greeting .salam {
+      font-size: 1.55rem !important;
+      text-align: center !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      position: relative !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 14px 5% !important;
+    }
+  
+    .nav-right {
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 12px !important;
+    }
+  
+    .nav-actions {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+    }
+  
+    .mobile-menu-btn {
+      display: grid !important;
+    }
+  
+    .nav-links {
+      position: absolute !important;
+      top: 100% !important;
+      left: 5% !important;
+      right: 5% !important;
+      display: none !important;
+      flex-direction: column !important;
+      gap: 0 !important;
+      padding: 18px !important;
+      background: rgba(13, 27, 42, 0.88) !important;
+      border: 1px solid rgba(255, 255, 255, 0.14) !important;
+      border-radius: 22px !important;
+      backdrop-filter: blur(18px) !important;
+      -webkit-backdrop-filter: blur(18px) !important;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25) !important;
+      z-index: 999 !important;
+    }
+  
+    .nav-links.active {
+      display: flex !important;
+    }
+  
+    .nav-links a {
+      width: 100% !important;
+      padding: 14px 16px !important;
+      border-radius: 14px !important;
+      color: white !important;
+      font-weight: 700 !important;
+    }
+  
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: #d4af37 !important;
+    }
+  
+    body.light-mode .nav-links {
+      background: rgba(255, 250, 240, 0.9) !important;
+      border: 1px solid rgba(0, 109, 91, 0.14) !important;
+      box-shadow: 0 24px 60px rgba(0, 109, 91, 0.14) !important;
+    }
+  
+    body.light-mode .nav-links a {
+      color: #10231f !important;
+    }
+  
+    body.light-mode .nav-links a:hover {
+      background: rgba(0, 109, 91, 0.08) !important;
+      color: #006d5b !important;
+    }
+  
+    .navbar .logo-frame {
+      width: 72px !important;
+      height: 72px !important;
+      min-width: 72px !important;
+      max-width: 72px !important;
+      min-height: 72px !important;
+      max-height: 72px !important;
+    }
+  
+    .navbar .logo {
+      width: 76px !important;
+      height: 76px !important;
+    }
+  
+    .navbar .site-name {
+      font-size: 0.95rem !important;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .home-card-grid,
+    .program-grid,
+    .split-section {
+      grid-template-columns: 1fr;
+    }
+  
+    .home-section {
+      padding: 75px 6%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .home-section {
+      padding: 60px 6%;
+    }
+  
+    .home-card,
+    .program-card,
+    .highlight-box {
+      padding: 24px;
+      border-radius: 22px;
+    }
+  
+    .mission-points div {
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .about-grid,
+    .mission-vision-section,
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .about-page {
+      padding: 80px 6%;
+    }
+  
+    .team-preview {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .about-page {
+      padding: 65px 6%;
+    }
+  
+    .about-card,
+    .mission-box,
+    .vision-box,
+    .value-card,
+    .team-preview {
+      padding: 24px;
+      border-radius: 22px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .featured-event,
+    .events-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .events-page {
+      padding: 80px 6%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .events-page {
+      padding: 65px 6%;
+    }
+  
+    .featured-event,
+    .event-card,
+    .events-cta {
+      padding: 24px;
+      border-radius: 22px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .faq-page {
+      padding: 65px 6%;
+    }
+  
+    .faq-question {
+      padding: 20px;
+      font-size: 1rem;
+    }
+  
+    .faq-answer {
+      padding: 0 20px 22px;
+    }
+  
+    .faq-contact-box {
+      padding: 28px;
+      border-radius: 22px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .policy-page {
+      padding: 65px 6%;
+    }
+  
+    .policy-card {
+      padding: 24px;
+      border-radius: 22px;
+    }
+  }
+
+  /* Fix homepage layout on phone screens */
+@media (max-width: 768px) {
+  .navbar {
+    z-index: 9999 !important;
+  }
+
+  .nav-links {
+    z-index: 10000 !important;
+    background: rgba(13, 27, 42, 0.96) !important;
+  }
+
+  body.light-mode .nav-links {
+    background: rgba(255, 250, 240, 0.96) !important;
+  }
+
+  .hero {
+    min-height: auto !important;
+    padding: 40px 6% 80px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .arabic-greeting {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px 0 35px !important;
+    padding: 18px 12px !important;
+    background: transparent !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    text-align: center !important;
+  }
+
+  .arabic-greeting .bismillah {
+    font-size: clamp(2.6rem, 13vw, 4rem) !important;
+    line-height: 1.35 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .arabic-greeting .salam {
+    font-size: clamp(1.55rem, 7vw, 2.2rem) !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+  }
+
+  .hero-content {
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+
+  .tagline {
+    font-size: 1.05rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 16vw, 5rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  .hero p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .hero-buttons {
+    width: 100% !important;
+  }
+
+  .hero-buttons .btn {
+    text-align: center !important;
+  }
+}

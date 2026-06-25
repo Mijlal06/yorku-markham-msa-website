@@ -1,0 +1,19 @@
+{
+  "name": "msa-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --ignore data server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "nodemailer": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
