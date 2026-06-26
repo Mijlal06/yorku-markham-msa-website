@@ -1,6 +1,5 @@
 import fs from "fs/promises";
 import path from "path";
-import nodemailer from "nodemailer";
 
 const messagesFilePath = path.join(
   process.cwd(),
@@ -54,34 +53,41 @@ export const submitContactForm = async (req, res) => {
 
     await fs.writeFile(messagesFilePath, JSON.stringify(messages, null, 2));
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+    const web3FormsResponse = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify({
+        access_key: process.env.WEB3FORMS_ACCESS_KEY,
+        name,
+        email,
+        subject: `New Contact Form Message: ${subject}`,
+        from_name: "YorkU Markham MSA Website",
+        message: `
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+        `,
+      }),
     });
 
-    const emailInfo = await transporter.sendMail({
-      from: `"YorkU Markham MSA Website" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO,
-      replyTo: email,
-      subject: `New Contact Form Message: ${subject}`,
-      html: `
-        <h2>New Contact Form Message</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    });
+    const web3FormsData = await web3FormsResponse.json();
 
-    console.log("New Contact Message Saved:");
+    if (!web3FormsResponse.ok || !web3FormsData.success) {
+      console.error("Web3Forms email error:", web3FormsData);
+
+      return res.status(500).json({
+        success: false,
+        message: "Message saved, but email could not be sent.",
+      });
+    }
+
+    console.log("New Contact Message Saved and Emailed:");
     console.log(newMessage);
-
-    console.log("Email sent successfully:");
-    console.log(emailInfo.messageId);
 
     return res.status(200).json({
       success: true,
