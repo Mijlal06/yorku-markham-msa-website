@@ -8,6 +8,17 @@ const messagesFilePath = path.join(
   "contactMessages.json"
 );
 
+const ensureMessagesFile = async () => {
+  const dataFolderPath = path.dirname(messagesFilePath);
+
+  try {
+    await fs.mkdir(dataFolderPath, { recursive: true });
+    await fs.access(messagesFilePath);
+  } catch (error) {
+    await fs.writeFile(messagesFilePath, "[]");
+  }
+};
+
 export const submitContactForm = async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
@@ -18,6 +29,8 @@ export const submitContactForm = async (req, res) => {
         message: "Please fill in all required fields.",
       });
     }
+
+    await ensureMessagesFile();
 
     const newMessage = {
       id: Date.now(),
@@ -95,6 +108,8 @@ export const getContactMessages = async (req, res) => {
       });
     }
 
+    await ensureMessagesFile();
+
     let messages = [];
 
     try {
@@ -128,6 +143,8 @@ export const deleteContactMessage = async (req, res) => {
         message: "Unauthorized access.",
       });
     }
+
+    await ensureMessagesFile();
 
     const messageId = Number(req.params.id);
 
