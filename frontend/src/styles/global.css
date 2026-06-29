@@ -2171,3 +2171,27 @@ body.light-mode .delete-message-btn {
   border: 1px solid rgba(180, 30, 30, 0.2);
 }
 
+.event-actions {
+  margin-top: 24px;
+}
+
+.event-link {
+  display: inline-block;
+  color: #d4af37;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.event-link:hover {
+  transform: translateX(4px);
+  color: white;
+}
+
+body.light-mode .event-link {
+  color: #006d5b;
+}
+
+body.light-mode .event-link:hover {
+  color: #b89120;
+}
