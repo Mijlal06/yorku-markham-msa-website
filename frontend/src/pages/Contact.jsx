@@ -101,6 +101,22 @@ ${formData.message}
             </div>
 
             <div className="contact-card">
+              <span>📸</span>
+              <div>
+                <h3>Instagram</h3>
+                <p>
+                  <a
+                    href="https://www.instagram.com/york_markham_msa/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    @york_markham_msa
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div className="contact-card">
               <span>📍</span>
               <div>
                 <h3>Campus</h3>
