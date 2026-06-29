@@ -442,3 +442,34 @@
     text-align: center !important;
   }
 }
+
+@media (max-width: 1000px) {
+  .prayer-location-box,
+  .timing-note,
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resources-page {
+    padding: 80px 6%;
+  }
+
+  .timing-note {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .resources-page {
+    padding: 65px 6%;
+  }
+
+  .prayer-location-box,
+  .timing-note,
+  .resources-support,
+  .resource-card {
+    padding: 24px;
+    border-radius: 22px;
+  }
+}

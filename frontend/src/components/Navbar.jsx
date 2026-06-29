@@ -20,11 +20,29 @@ function Navbar() {
 
       <div className="nav-right">
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/about" onClick={closeMenu}>About</Link>
-          <Link to="/events" onClick={closeMenu}>Events</Link>
-          <Link to="/faq" onClick={closeMenu}>FAQ</Link>
-          <Link to="/contact" onClick={closeMenu}>Contact</Link>
+          <Link to="/" onClick={closeMenu}>
+            Home
+          </Link>
+
+          <Link to="/about" onClick={closeMenu}>
+            About
+          </Link>
+
+          <Link to="/events" onClick={closeMenu}>
+            Events
+          </Link>
+
+          <Link to="/resources" onClick={closeMenu}>
+            Resources
+          </Link>
+
+          <Link to="/faq" onClick={closeMenu}>
+            FAQ
+          </Link>
+
+          <Link to="/contact" onClick={closeMenu}>
+            Contact
+          </Link>
         </div>
 
         <div className="nav-actions">

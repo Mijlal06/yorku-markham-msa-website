@@ -11,6 +11,7 @@ function Footer() {
       <div className="footer-links">
         <Link to="/privacy">Privacy Policy</Link>
         <Link to="/terms">Terms & Conditions</Link>
+        <Link to="/resources">Resources</Link>
         <Link to="/contact">Contact</Link>
 
         <a
