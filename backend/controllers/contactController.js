@@ -29,15 +29,6 @@ export const submitContactForm = async (req, res) => {
       });
     }
 
-    if (!process.env.WEB3FORMS_ACCESS_KEY) {
-      console.error("Missing WEB3FORMS_ACCESS_KEY in environment variables.");
-
-      return res.status(500).json({
-        success: false,
-        message: "Email service is not configured.",
-      });
-    }
-
     await ensureMessagesFile();
 
     const newMessage = {
@@ -62,63 +53,15 @@ export const submitContactForm = async (req, res) => {
 
     await fs.writeFile(messagesFilePath, JSON.stringify(messages, null, 2));
 
-    const web3FormsResponse = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        access_key: process.env.WEB3FORMS_ACCESS_KEY,
-        name,
-        email,
-        subject: `New Contact Form Message: ${subject}`,
-        from_name: "YorkU Markham MSA Website",
-        message: `
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
-
-Message:
-${message}
-        `,
-      }),
-    });
-
-    const web3FormsText = await web3FormsResponse.text();
-
-    let web3FormsData;
-
-    try {
-      web3FormsData = JSON.parse(web3FormsText);
-    } catch (error) {
-      console.error("Web3Forms returned non-JSON response:");
-      console.error(web3FormsText);
-
-      return res.status(500).json({
-        success: false,
-        message: "Message saved, but email service returned an invalid response.",
-      });
-    }
-
-    if (!web3FormsResponse.ok || !web3FormsData.success) {
-      console.error("Web3Forms email error:", web3FormsData);
-
-      return res.status(500).json({
-        success: false,
-        message: "Message saved, but email could not be sent.",
-      });
-    }
-
-    console.log("New Contact Message Saved and Emailed:");
+    console.log("New Contact Message Saved:");
     console.log(newMessage);
 
     return res.status(200).json({
       success: true,
-      message: "Your message has been received and emailed successfully.",
+      message: "Your message has been saved successfully.",
     });
   } catch (error) {
-    console.error("Contact form error:", error);
+    console.error("Contact form save error:", error);
 
     return res.status(500).json({
       success: false,
