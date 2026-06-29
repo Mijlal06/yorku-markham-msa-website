@@ -119,7 +119,7 @@ ${formData.message}
             <div className="contact-card">
               <span>📍</span>
               <div>
-                <h3>Campus</h3>
+                <h3>Markham</h3>
                 <p>York University Markham Campus</p>
               </div>
             </div>
